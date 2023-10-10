@@ -10,9 +10,9 @@ import pandas as pd
 
 
 def clean_data():
-
+    
     df = pd.read_csv("solicitudes_credito.csv", sep=";")
-
+    
     df.rename(columns = {'Unnamed: 0': 'index'}, inplace = True)
     df.set_index('index', inplace = True)
 
