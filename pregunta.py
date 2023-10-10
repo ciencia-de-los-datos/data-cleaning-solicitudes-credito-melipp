@@ -37,7 +37,7 @@ def clean_data():
 
     #Columna fecha_de_beneficio
     df.fecha_de_beneficio = pd.to_datetime(df.fecha_de_beneficio, dayfirst = True)
-
+    
     #Columna monto_del_credito
     df.monto_del_credito = df.monto_del_credito.str.replace('$','').str.replace(',','')
     df.monto_del_credito = df.monto_del_credito.astype(float)
