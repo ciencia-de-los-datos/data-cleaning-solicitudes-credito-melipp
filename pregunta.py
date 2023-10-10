@@ -43,7 +43,7 @@ def clean_data():
     df.monto_del_credito = df.monto_del_credito.astype(float)
 
     #Columna línea_credito
-    df.linea_credito = df.línea_credito.str.lower().str.strip('_').str.strip('-').str.strip().str.replace('_',' ').str.replace('-',' ')
+    df.línea_credito = df.línea_credito.str.lower().str.strip('_').str.strip('-').str.strip().str.replace('_',' ').str.replace('-',' ')
 
     df.dropna(inplace = True)
     df.drop_duplicates(inplace = True)
