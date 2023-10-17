@@ -29,14 +29,7 @@ def clean_data():
     df.idea_negocio = df.idea_negocio.astype('category')
     
     #Columna barrio
-    # df.barrio = df.barrio.str.lower().str.strip('_').str.strip('-').str.strip().str.replace('_',' ').str.replace('-',' ')
     df.barrio = df.barrio.str.lower().str.replace('_','-').str.replace("-", " ")
-    # df.barrio = df.barrio.str.replace("bel¿n","belen")
-    # df.barrio = df.barrio.str.replace("andaluc¿a","andalucia")
-    # df.barrio = df.barrio.str.replace("antonio nari¿o","antonio nariño")
-    # df.barrio = df.barrio.str.replace("campo vald¿s","campo valdes")
-    # df.barrio = df.barrio.str.replace("boyac¿","boyaca")
-    # df.barrio = df.barrio.str.replace("veinte","20")
     
     #Columna comuna_ciudadano
     df.comuna_ciudadano = df.comuna_ciudadano.astype('Int64')
@@ -44,7 +37,6 @@ def clean_data():
     
     #Columna fecha_de_beneficio
     df.fecha_de_beneficio = pd.to_datetime(df.fecha_de_beneficio, dayfirst = True)
-    # sorted(list(set(list(df.fecha_de_beneficio))))
     
     #Columna monto_del_credito
     df.monto_del_credito = df.monto_del_credito.str.replace('$','').str.replace(',','')
