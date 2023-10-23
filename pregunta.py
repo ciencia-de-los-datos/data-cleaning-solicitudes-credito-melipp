@@ -20,7 +20,7 @@ def clean_data():
     df.fecha_de_beneficio = pd.to_datetime(df["fecha_de_beneficio"],format='mixed', dayfirst = True)
     df.monto_del_credito = df.monto_del_credito.astype(float)
 
-    df.drop_duplicates(inplace=True)
+    df.dropna(inplace = True)
     df.drop_duplicates(inplace = True)
     
     return df
